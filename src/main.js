@@ -121,8 +121,7 @@ const router = new VueRouter({
 			{ path: 'contacts/:id', name:'adminContact', component: AdminContact}
 		] },
 		{ path: '*', component: NotFound }
-	],
-	mode: 'hash'
+	]
 })
 router.beforeEach((to, from, next) => {
 	router.app.$store.commit('set404Page', false)
