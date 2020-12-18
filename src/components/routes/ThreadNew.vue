@@ -277,7 +277,7 @@ import { baseUrl } from '@/utils/helpers'
 					this.postCategories = res.data.filter(c => c.name !== 'Other')
 				})
 				.catch(AjaxErrorHandler(this.$store))
-		}
+		},
 		beforeRouteEnter (to, from, next) {
 			next(vm => {
 				if(!vm.$store.state.username) {
