@@ -400,7 +400,7 @@
                     Высокие результаты, профессиональная команда, индивидуальный
                     подход.
                   </h6>
-                  <a href="/category/all" class="sub-title text-white pt-30">Наш форум</a>
+                  <a href="/#/category/all" class="sub-title text-white pt-30">Наш форум</a>
                 </div>
               </div>
             </div>

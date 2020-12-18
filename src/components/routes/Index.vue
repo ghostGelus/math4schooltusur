@@ -26,7 +26,7 @@
 					Категории
 				</div>
 				<router-link
-					v-for='(category, $index) in categories'
+					v-for='(category, $index) in postCategories'
 					:key='"category-link-" + $index'
 
 					class='threads_main__side_bar__menu_item'
@@ -113,6 +113,7 @@
 			return {
 				selectedFilterOption: 'NEW',
 				nextURL: '',
+				postCategories: [],
 				nextThreadsCount: 0,
 				loading: false,
 				threads: null,
@@ -238,10 +239,15 @@
 				this.$store.commit('setAccountModalState', true)
 			}
 			logger('index')
+
 		},
-		destroyed () {
-			this.$socket.emit('leave', 'index')
-			this.$socket.off('new thread')
+		mounted () {
+			this.axios
+				.get(baseUrl + '/api/v1/category')
+				.then(res => {
+					this.postCategories = res.data.filter(c => c.name !== 'Other')
+				})
+				.catch(AjaxErrorHandler(this.$store))
 		}
 	}
 </script>

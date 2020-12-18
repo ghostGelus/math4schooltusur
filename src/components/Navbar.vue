@@ -103,7 +103,7 @@
 		</modal-window>
 
 		<header class='header'>
-			<a class='header__group' href="/category/all">
+			<a class='header__group' href="/#/category/all">
 				Форум
 			</a>
 			<div class='header__group' :class='{ "header__group--show": showMenu }'>
