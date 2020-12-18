@@ -12,15 +12,11 @@ export default function (route, resourceId) {
 						resourceId: res.data.id
 					})
 			})
-			.catch(console.log)
 	} else {
 		axios
 			.post(baseUrl + '/api/v1/log', {
 				route,
 				resourceId
 			})
-			.catch(console.log)
 	}
-
-
 }
