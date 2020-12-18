@@ -236,7 +236,6 @@
 					this.loadingLogout = false
 					this.$store.commit('setUsername', '')
 					this.$store.commit('setAdmin', res.data.admin)
-					this.$socket.emit('accountEvent')
 					this.$router.push('/')
 				}).catch(err => {
 					this.loadingLogout = false

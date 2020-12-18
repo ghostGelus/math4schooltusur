@@ -183,16 +183,6 @@ import { baseUrl } from '@/utils/helpers'
 		},
 		created () {
 			if(this.$store.state.username) this.getNotifications()
-
-			this.$socket.on('notification', notification => {
-				this.unreadCount++
-				this.notifications.unshift(notification)
-
-				this.shake = true
-				setTimeout(() => {
-					this.shake = false
-				}, 1000)
-			})
 		},
 		watch: {
 			'$store.state.username': 'getNotifications'

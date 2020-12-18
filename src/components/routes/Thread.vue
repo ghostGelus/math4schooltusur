@@ -375,17 +375,8 @@
 
 			this.loadInitialPosts()
 
-			this.$socket.emit('join', 'thread/' + this.$route.params.id)
-			this.$socket.on('new post', post => {
-				this.showPostNotification(post)
-				this.$store.dispatch('loadNewPostsSinceLoad', post)
-			})
 
 			logger('thread', this.$route.params.id)
-		},
-		destroyed () {
-			this.$socket.emit('leave', 'thread/' + this.$route.params.id)
-			this.$socket.off('new post')
 		}
 	}
 </script>

@@ -227,12 +227,6 @@
 		created () {
 			this.selectedCategory = this.$route.path.split('/')[2].toUpperCase()
 			this.getThreads(true)
-			this.$socket.emit('join', 'index')
-			this.$socket.on('new thread', data => {
-				if(data.value === this.selectedCategory || this.selectedCategory == 'ALL') {
-					this.newThreads++
-				}
-			})
 			if(this.$route.query.token) {
 				this.$store.commit('setToken', this.$route.query.token)
 				this.$store.commit('setAccountTabs', 0)
