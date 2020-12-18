@@ -271,7 +271,13 @@ import { baseUrl } from '@/utils/helpers'
 		},
 		mounted () {
 			logger('threadNew')
-		},
+			this.axios
+				.get(baseUrl + '/api/v1/category')
+				.then(res => {
+					this.postCategories = res.data.filter(c => c.name !== 'Other')
+				})
+				.catch(AjaxErrorHandler(this.$store))
+		}
 		beforeRouteEnter (to, from, next) {
 			next(vm => {
 				if(!vm.$store.state.username) {

@@ -434,9 +434,11 @@
 import VueFaqAccordion from "../VueFaqAccordion";
 import { VueAgile } from "vue-agile";
 import { baseUrl } from '@/utils/helpers'
+import logger from '../../assets/js/logger'
 
 export default {
   mounted() {
+    logger('index')
     window.scrollTo(0, 0);
     this.$store.dispatch('setTitle', 'Математика с Факультетом безопасности');
   },
