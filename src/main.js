@@ -122,7 +122,7 @@ const router = new VueRouter({
 		] },
 		{ path: '*', component: NotFound }
 	],
-	mode: 'history'
+	mode: 'hash'
 })
 router.beforeEach((to, from, next) => {
 	router.app.$store.commit('set404Page', false)
